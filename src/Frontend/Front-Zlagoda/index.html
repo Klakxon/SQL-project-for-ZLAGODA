@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Міні-супермаркет</title>
+    <style>
+        /* Стилі для кнопок та меню */
+        .button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #manager-menu {
+            display: none;
+        }
+        /* Стилі для таблиць */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+<button class="button" onclick="showManagerMenu()">Менеджер</button>
+<button class="button" onclick="showCashierMenu()">Касир</button>
+
+<div id="manager-menu">
+    <button class="button" onclick="showEmployees()">Працівники</button>
+    <button class="button" onclick="showCategories()">Категорії</button>
+    <button class="button" onclick="showReceipts()">Чеки</button>
+    <button class="button" onclick="showCustomerCards()">Карти клієнтів</button>
+</div>
+
+<!-- Таблиця для працівників -->
+<table id="employees-table" style="display: none;">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>ПІБ</th>
+        <th>Посада</th>
+        <th>Зарплата</th>
+        <th>Дата початку роботи</th>
+        <th>Дата народження</th>
+        <th>Контактний телефон</th>
+        <th>Адреса</th>
+        <th>Дії</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Сюди будуть додаватися рядки з даними про працівників -->
+    </tbody>
+</table>
+
+<!-- Таблиця для категорій -->
+<table id="categories-table" style="display: none;">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Назва</th>
+        <th>Дії</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Сюди будуть додаватися рядки з даними про категорії -->
+    </tbody>
+</table>
+
+<!-- Таблиця для чеків -->
+<table id="receipts-table" style="display: none;">
+    <thead>
+    <tr>
+        <th>Номер чека</th>
+        <th>Дата</th>
+        <th>Загальна сума</th>
+        <th>ПДВ</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Сюди будуть додаватися рядки з даними про чеки -->
+    </tbody>
+</table>
+
+<!-- Таблиця для карт клієнтів -->
+<table id="customer-cards-table" style="display: none;">
+    <thead>
+    <tr>
+        <th>Номер карти</th>
+        <th>ПІБ власника</th>
+        <th>Контактний телефон</th>
+        <th>Адреса</th>
+        <th>Відсоток на знижку</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Сюди будуть додаватися рядки з даними про карти клієнтів -->
+    </tbody>
+</table>
+
+<script>
+    function showManagerMenu() {
+        var menu = document.getElementById("manager-menu");
+        menu.style.display = "block";
+    }
+
+    function showCashierMenu() {
+        // Додайте код для обробки натискання на кнопку "Касир"
+    }
+
+    function showEmployees() {
+        var employeesTable = document.getElementById("employees-table");
+        employeesTable.style.display = "block";
+        // Додайте код для запиту до сервера та відображення даних про працівників у таблиці
+    }
+
+    function showCategories() {
+        var categoriesTable = document.getElementById("categories-table");
+        categoriesTable.style.display = "block";
+        // Додайте код для запиту до сервера та відображення даних про категорії у таблиці
+    }
+
+    function showReceipts() {
+        var receiptsTable = document.getElementById("receipts-table");
+        receiptsTable.style.display = "block";
+        // Додайте код для запиту до сервера та відображення даних про чеки у таблиці
+    }
+
+    function showCustomerCards() {
+        var customerCardsTable = document.getElementById("customer-cards-table");
+        customerCardsTable.style.display = "block";
+        // Додайте код для запиту до сервера та відображення даних про карти клієнтів у таблиці
+    }
+</script>
+
+</body>
+</html>
