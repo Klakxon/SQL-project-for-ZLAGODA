@@ -1,4 +1,4 @@
-package org.example;
+package org.example.Entity;
 
 public class GoodInShop {
     private final String upc;

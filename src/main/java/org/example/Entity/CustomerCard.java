@@ -1,4 +1,4 @@
-package org.example;
+package org.example.Entity;
 
 public class CustomerCard {
     private final String id;
