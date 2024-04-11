@@ -1,3 +1,5 @@
+package Server;
+
 import java.io.*;
 import java.net.*;
 
@@ -10,7 +12,7 @@ public class SimpleHttpServer {
             ServerSocket serverSocket = new ServerSocket(port);
             System.out.println("HTTP Server started on port " + port);
 
-            // Безкінечний цикл для прийому клієнтських запитів
+            // Нескінченний цикл для приймання клієнтських запитів
             while (true) {
                 // Приймання клієнтського сокету
                 Socket clientSocket = serverSocket.accept();
@@ -46,3 +48,4 @@ public class SimpleHttpServer {
         }
     }
 }
+
