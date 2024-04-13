@@ -6,11 +6,10 @@ public class Employee {
     private final String id;
     private double payment;
     private String surname, name, patronymic, position, telephone, city, street, zipCode;
-    private int building;
     private Date startWork, birthday;
 
     public Employee(String id, String surname, String name, String patronymic, String position, double payment,
-                    Date startWork, Date birthday, String telephone, String city, String street, int building, String zipCode) {
+                    Date startWork, Date birthday, String telephone, String city, String street, String zipCode) {
         if (id == null || id.length() == 0 || id.length() > 10) {
             throw new IllegalArgumentException("Invalid value of ID");
         }
@@ -44,9 +43,6 @@ public class Employee {
         if (street == null || street.length() > 50) {
             throw new IllegalArgumentException("Invalid value of street");
         }
-        if (building <= 0) {
-            throw new IllegalArgumentException("Invalid value of building");
-        }
         if (zipCode == null || zipCode.length() > 9) {
             throw new IllegalArgumentException("Invalid value of zipCode");
         }
@@ -61,7 +57,6 @@ public class Employee {
         this.telephone = telephone;
         this.city = city;
         this.street = street;
-        this.building = building;
         this.zipCode = zipCode;
     }
 
@@ -155,13 +150,5 @@ public class Employee {
 
     public void setZipCode(String zipCode) {
         this.zipCode = zipCode;
-    }
-
-    public int getBuilding() {
-        return building;
-    }
-
-    public void setBuilding(int building) {
-        this.building = building;
     }
 }

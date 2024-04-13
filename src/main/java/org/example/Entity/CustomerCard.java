@@ -4,10 +4,9 @@ public class CustomerCard {
     private final String id;
     private String surname, name, patronymic, telephone, city, street, zipCode;
     private int percent;
-    private int building;
 
     public CustomerCard(String id, String surname, String name, String patronymic, String telephone, String city,
-                        String street, int building, String zipCode, int percent) {
+                        String street, String zipCode, int percent) {
         if (id == null || id.length() > 13) {
             throw new IllegalArgumentException("Invalid value of id");
         }
@@ -29,9 +28,6 @@ public class CustomerCard {
         if (street.length() > 50) {
             throw new IllegalArgumentException("Invalid value of street");
         }
-        if (building <= 0) {
-            throw new IllegalArgumentException("Invalid value of building");
-        }
         if (zipCode.length() > 9) {
             throw new IllegalArgumentException("Invalid value of zipCode");
         }
@@ -45,7 +41,6 @@ public class CustomerCard {
         this.telephone = telephone;
         this.city = city;
         this.street = street;
-        this.building = building;
         this.zipCode = zipCode;
         this.percent = percent;
     }
@@ -108,14 +103,6 @@ public class CustomerCard {
 
     public void setZipCode(String zipCode) {
         this.zipCode = zipCode;
-    }
-
-    public int getBuilding() {
-        return building;
-    }
-
-    public void setBuilding(int building) {
-        this.building = building;
     }
 
     public double getPercent() {

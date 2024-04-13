@@ -1,6 +1,5 @@
 package org.example.Entity;
 
-import org.example.Entity.GoodInShop;
 
 import java.util.Date;
 
