@@ -12,7 +12,7 @@ public class CategoryServlet extends HttpServlet {
     public void init() throws ServletException {
         super.init();
         try {
-            // Підключення до бази даних SQLite
+            // Connecting to the SQLite database
             String url = "jdbc:sqlite:src/main/Database/ZLAGODA.sqlite3";
             connection = DriverManager.getConnection(url);
         } catch (SQLException e) {
@@ -21,16 +21,16 @@ public class CategoryServlet extends HttpServlet {
     }
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
 
         try {
-            // Запит до бази даних для отримання категорій
+            // Querying the database to get categories
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery("SELECT category_number, category_name FROM Category");
 
-            // Виведення результатів запиту
+            // Outputting the results of the query
             while (resultSet.next()) {
                 int id = resultSet.getInt("category_number");
                 String name = resultSet.getString("category_name");
